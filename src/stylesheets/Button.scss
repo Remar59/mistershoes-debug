@@ -1,0 +1,65 @@
+@use "sass:color";
+@use "./variables" as v;
+
+@mixin buttonStyle($color: v.$color-white, $background: v.$color-secondary, $border: v.$color-secondary, $font-weight: bold) {
+  width: 100%;
+  border: 0;
+  color: $color;
+  background-color: $background;
+  padding: 1.8rem;
+  text-align: center;
+  text-shadow: 0 0.2rem 0.2rem rgb(0 0 0 / 0.4);
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: $font-weight;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin: 0;
+  margin-top: 2rem;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  &:not(:disabled):hover {
+    background-color: color.adjust($background, $lightness: -10%);
+  }
+
+  svg {
+    filter: drop-shadow(0 0.2rem 0.2rem rgb(0 0 0 / 0.4));
+  }
+}
+
+.primary {
+  @include buttonStyle;
+}
+
+.secondary {
+  @include buttonStyle(v.$color-secondary, transparent, v.$color-secondary);
+}
+
+.warning {
+  @include buttonStyle(v.$color-white, v.$color-warning, v.$color-warning);
+}
+
+.danger {
+  @include buttonStyle(v.$color-white, v.$color-danger, v.$color-danger);
+}
+
+.link {
+  color: v.$color-secondary;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.small {
+  padding: 1rem 1.8rem;
+}

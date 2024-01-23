@@ -1,0 +1,42 @@
+@use "./variables" as v;
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+.product-card {
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    @media screen and (min-width: v.$xs-breakpoint) {
+        width: 30%;
+    }
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-picture {
+    img {
+        width: 100%;
+    }
+}
+
+.product-price {
+    color: green;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product-sizes {
+    font-size: 14px;
+    color: gray;
+}

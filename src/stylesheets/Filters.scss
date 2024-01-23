@@ -1,0 +1,21 @@
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.filter-select {
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
